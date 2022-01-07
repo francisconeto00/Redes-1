@@ -19,7 +19,7 @@ node n1 {
     }
     canvas c1
     iconcoords {367.6666666666667 122.66666666666667}
-    labelcoords {370.6666666666667 100.66666666666666}
+    labelcoords {371.6666666666667 102.66666666666666}
     interface-peer {eth0 n4}
     interface-peer {eth1 n2}
     interface-peer {eth3 n21}
@@ -84,7 +84,7 @@ node n2 {
     }
     canvas c1
     iconcoords {626.6666666666666 116.0}
-    labelcoords {627.6666666666666 93.0}
+    labelcoords {616.6666666666666 97.0}
     interface-peer {eth0 n1}
     interface-peer {eth1 n3}
     interface-peer {eth2 n5}
@@ -144,7 +144,7 @@ node n3 {
     }
     canvas c1
     iconcoords {693.0 260.0}
-    labelcoords {727.0 266.0}
+    labelcoords {728.0 270.0}
     interface-peer {eth0 n2}
     interface-peer {eth1 n7}
     custom-config {
@@ -197,7 +197,7 @@ node n4 {
     }
     canvas c1
     iconcoords {303.0 264.0}
-    labelcoords {340.0 276.0}
+    labelcoords {340.0 271.0}
     interface-peer {eth0 n1}
     interface-peer {eth1 n6}
     custom-config {
@@ -249,8 +249,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {506.0 247.0}
-    labelcoords {506.0 279.0}
+    iconcoords {505.0 249.0}
+    labelcoords {529.0 277.0}
     interface-peer {eth0 n6}
     interface-peer {eth1 n2}
     custom-config {
@@ -309,7 +309,7 @@ node n6 {
     }
     canvas c1
     iconcoords {372.0 414.0}
-    labelcoords {384.0 456.0}
+    labelcoords {384.0 454.0}
     interface-peer {eth0 n7}
     interface-peer {eth1 n4}
     interface-peer {eth2 n5}
@@ -376,7 +376,7 @@ node n7 {
     }
     canvas c1
     iconcoords {634.3333333333334 411.6666666666667}
-    labelcoords {619.3333333333334 449.6666666666667}
+    labelcoords {620.3333333333334 448.6666666666667}
     interface-peer {eth0 n3}
     interface-peer {eth1 n6}
     interface-peer {eth2 n8}
@@ -459,9 +459,18 @@ node n12 {
 	!
     }
     canvas c1
-    iconcoords {133.0 106.33333333333333}
-    labelcoords {133.0 138.33333333333334}
+    iconcoords {130.0 106.33333333333333}
+    labelcoords {130.0 138.33333333333334}
     interface-peer {eth0 n21}
+    custom-config {
+	custom-config-id service:DHCPClient
+	custom-command DHCPClient
+	config {
+	startidx=80
+	cmdup=('sh startdhcpclient.sh', )
+	starttime=30
+	}
+    }
     custom-config {
 	custom-config-id service:DefaultRoute
 	custom-command DefaultRoute
@@ -479,7 +488,7 @@ node n12 {
 	
 	}
     }
-    services {DefaultRoute}
+    services {DHCPClient}
 }
 
 node n13 {
@@ -493,8 +502,8 @@ node n13 {
 	!
     }
     canvas c1
-    iconcoords {838.0 136.0}
-    labelcoords {838.0 168.0}
+    iconcoords {836.0 139.0}
+    labelcoords {836.0 171.0}
     interface-peer {eth0 n9}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -561,8 +570,8 @@ node n15 {
 	!
     }
     canvas c1
-    iconcoords {799.0 642.0}
-    labelcoords {799.0 674.0}
+    iconcoords {799.0 643.0}
+    labelcoords {799.0 675.0}
     interface-peer {eth0 n8}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -595,8 +604,8 @@ node n16 {
 	!
     }
     canvas c1
-    iconcoords {921.0 562.0}
-    labelcoords {921.0 594.0}
+    iconcoords {920.0 562.0}
+    labelcoords {920.0 594.0}
     interface-peer {eth0 n8}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -629,8 +638,8 @@ node n17 {
 	!
     }
     canvas c1
-    iconcoords {802.0 38.0}
-    labelcoords {802.0 70.0}
+    iconcoords {805.0 34.0}
+    labelcoords {805.0 66.0}
     interface-peer {eth0 n9}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -663,9 +672,18 @@ node n18 {
 	!
     }
     canvas c1
-    iconcoords {94.66666666666667 44.0}
-    labelcoords {80.66666666666667 81.0}
+    iconcoords {92.66666666666667 44.0}
+    labelcoords {78.66666666666667 81.0}
     interface-peer {eth0 n21}
+    custom-config {
+	custom-config-id service:DHCPClient
+	custom-command DHCPClient
+	config {
+	startidx=80
+	cmdup=('sh startdhcpclient.sh', )
+	starttime=30
+	}
+    }
     custom-config {
 	custom-config-id service:DefaultRoute
 	custom-command DefaultRoute
@@ -683,7 +701,7 @@ node n18 {
 	
 	}
     }
-    services {DefaultRoute}
+    services {DHCPClient}
 }
 
 node n19 {
@@ -782,20 +800,6 @@ node n8 {
     interface-peer {e2 n16}
 }
 
-node n10 {
-    type hub
-    network-config {
-	hostname n10
-	!
-    }
-    canvas c1
-    iconcoords {197.0 208.0}
-    labelcoords {197.0 232.0}
-    interface-peer {e0 n1}
-    interface-peer {e1 n23}
-    interface-peer {e2 n24}
-}
-
 node n22 {
     type hub
     network-config {
@@ -817,13 +821,19 @@ node n23 {
 	hostname n23
 	!
 	interface eth0
-	 ip address 10.0.0.20/24
 	!
     }
     canvas c1
-    iconcoords {65.0 217.0}
-    labelcoords {65.0 249.0}
-    interface-peer {eth0 n10}
+    iconcoords {66.0 216.0}
+    labelcoords {66.0 248.0}
+    custom-config {
+	custom-config-id service:DHCPClient
+	custom-command DHCPClient
+	config {
+	cmdup=('sh startdhcpclient.sh', )
+	starttime=45
+	}
+    }
     custom-config {
 	custom-config-id service:DefaultRoute
 	custom-command DefaultRoute
@@ -841,7 +851,8 @@ node n23 {
 	
 	}
     }
-    services {DefaultRoute}
+    services {DefaultRoute DHCPClient}
+    interface-peer {eth0 n10}
 }
 
 node n24 {
@@ -851,13 +862,18 @@ node n24 {
 	hostname n24
 	!
 	interface eth0
-	 ip address 10.0.0.21/24
 	!
     }
     canvas c1
-    iconcoords {118.0 292.0}
-    labelcoords {118.0 324.0}
-    interface-peer {eth0 n10}
+    iconcoords {102.0 265.0}
+    labelcoords {102.0 297.0}
+    custom-config {
+	custom-config-id service:DHCPClient
+	custom-command DHCPClient
+	config {
+	starttime=45
+	}
+    }
     custom-config {
 	custom-config-id service:DefaultRoute
 	custom-command DefaultRoute
@@ -875,7 +891,8 @@ node n24 {
 	
 	}
     }
-    services {DefaultRoute}
+    services {DefaultRoute DHCPClient}
+    interface-peer {eth0 n10}
 }
 
 node n25 {
@@ -889,8 +906,8 @@ node n25 {
 	!
     }
     canvas c1
-    iconcoords {819.0 318.6666666666667}
-    labelcoords {819.0 350.6666666666667}
+    iconcoords {825.0 339.6666666666667}
+    labelcoords {825.0 371.6666666666667}
     interface-peer {eth0 n22}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -923,8 +940,8 @@ node n26 {
 	!
     }
     canvas c1
-    iconcoords {940.0 305.0}
-    labelcoords {940.0 337.0}
+    iconcoords {930.0 298.0}
+    labelcoords {930.0 330.0}
     interface-peer {eth0 n22}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -944,6 +961,91 @@ node n26 {
 	}
     }
     services {DefaultRoute}
+}
+
+node n27 {
+    type router
+    model host
+    network-config {
+	hostname n27
+	!
+	interface eth0
+	 ip address 10.0.0.1/24
+	!
+    }
+    canvas c1
+    iconcoords {206.0 288.0}
+    labelcoords {206.0 320.0}
+    custom-config {
+	custom-config-id service:DHCP
+	custom-command DHCP
+	config {
+	files=('/etc/dhcp/dhcpd.conf', )
+	}
+    }
+    custom-config {
+	custom-config-id service:DHCP:/etc/dhcp/dhcpd.conf
+	custom-command /etc/dhcp/dhcpd.conf
+	config {
+	# auto-generated by DHCP service (utility.py)
+	# NOTE: move these option lines into the desired pool { } block(s) below
+	#option domain-name "test.com";
+	#option domain-name-servers 10.0.0.1;
+	#option routers 10.0.0.1;
+	
+	log-facility local6;
+	
+	default-lease-time 600;
+	max-lease-time 7200;
+	
+	ddns-update-style none;
+	
+	subnet 10.0.0.0 netmask 255.255.255.0 {
+	  pool {
+	    range 10.0.0.1 10.0.0.253;
+	    default-lease-time 600;
+	    option domain-name-servers 10.0.0.1;
+	    option routers 10.0.0.254;
+	  }
+	}
+	
+	
+	}
+    }
+    custom-config {
+	custom-config-id service:DefaultRoute
+	custom-command DefaultRoute
+	config {
+	files=('defaultroute.sh', )
+	}
+    }
+    custom-config {
+	custom-config-id service:DefaultRoute:defaultroute.sh
+	custom-command defaultroute.sh
+	config {
+	#!/bin/sh
+	# auto-generated by DefaultRoute service (utility.py)
+	ip route add default via 10.0.0.254
+	
+	}
+    }
+    services {DefaultRoute DHCP SSH}
+    interface-peer {eth0 n10}
+}
+
+node n10 {
+    type lanswitch
+    network-config {
+	hostname n10
+	!
+    }
+    canvas c1
+    iconcoords {200.0 209.0}
+    labelcoords {200.0 233.0}
+    interface-peer {e0 n1}
+    interface-peer {e1 n27}
+    interface-peer {e2 n24}
+    interface-peer {e3 n23}
 }
 
 link l1 {
@@ -1053,22 +1155,8 @@ link l17 {
     bandwidth 0
 }
 
-link l18 {
-    nodes {n10 n1}
-}
-
 link l23 {
     nodes {n2 n22}
-    bandwidth 0
-}
-
-link l24 {
-    nodes {n23 n10}
-    bandwidth 0
-}
-
-link l25 {
-    nodes {n24 n10}
     bandwidth 0
 }
 
@@ -1079,6 +1167,26 @@ link l26 {
 
 link l27 {
     nodes {n22 n26}
+    bandwidth 0
+}
+
+link l18 {
+    nodes {n10 n1}
+    bandwidth 0
+}
+
+link l24 {
+    nodes {n10 n27}
+    bandwidth 0
+}
+
+link l25 {
+    nodes {n10 n24}
+    bandwidth 0
+}
+
+link l28 {
+    nodes {n10 n23}
     bandwidth 0
 }
 
@@ -1122,7 +1230,7 @@ annotation a3 {
 }
 
 annotation a4 {
-    iconcoords {650.0 462.0 1000.0 716.0}
+    iconcoords {637 462 989 718}
     type oval
     label {}
     labelcolor black
@@ -1157,133 +1265,6 @@ annotation a6 {
     color #CFCFFF
     width 0
     border black
-    canvas c1
-}
-
-annotation a7 {
-    type text
-    iconcoords {298.0 543.0}
-    label {}
-    canvas c1
-}
-
-annotation a8 {
-    iconcoords {297.0 542.0}
-    type text
-    label {R3}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a9 {
-    iconcoords {836.0 486.0}
-    type text
-    label {R4}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a10 {
-    iconcoords {922.0 256.0}
-    type text
-    label {R2-B}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a11 {
-    iconcoords {878.0 75.0}
-    type text
-    label {R2-A}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a12 {
-    iconcoords {354.0 188.0}
-    type text
-    label {1}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a13 {
-    iconcoords {348.0 331.0}
-    type text
-    label {2}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a14 {
-    iconcoords {508.0 425.0}
-    type text
-    label {3}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a15 {
-    iconcoords {687.0 338.0}
-    type text
-    label {4}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a16 {
-    iconcoords {676.0 196.0}
-    type text
-    label {5}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a17 {
-    iconcoords {582.0 186.0}
-    type text
-    label {6}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a18 {
-    iconcoords {465.0 327.0}
-    type text
-    label {7}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
-    canvas c1
-}
-
-annotation a19 {
-    iconcoords {501.0 95.0}
-    type text
-    label {8}
-    labelcolor black
-    fontfamily {Arial}
-    fontsize 12
     canvas c1
 }
 
